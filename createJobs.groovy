@@ -53,3 +53,20 @@ pipelineJob('theme-park-job-aws') {
         }
     }
 }
+
+
+pipelineJob('ecommerce-auth-service') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/TuanHungit/ecommerce-java-microservices.git'
+                    }
+                    branch 'master'
+                    scriptPath('auth-service/Jenkinsfile')
+                }
+            }
+        }
+    }
+}
