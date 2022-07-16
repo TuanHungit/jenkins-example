@@ -70,3 +70,37 @@ pipelineJob('ecommerce-auth-service') {
         }
     }
 }
+
+
+pipelineJob('ecommerce-naming-server') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/TuanHungit/ecommerce-java-microservices.git'
+                    }
+                    branch 'master'
+                    scriptPath('naming-server/Jenkinsfile')
+                }
+            }
+        }
+    }
+}
+
+
+pipelineJob('ecommerce-api-gateway') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/TuanHungit/ecommerce-java-microservices.git'
+                    }
+                    branch 'master'
+                    scriptPath('api-gateway/Jenkinsfile')
+                }
+            }
+        }
+    }
+}
